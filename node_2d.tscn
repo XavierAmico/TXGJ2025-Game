@@ -18,7 +18,18 @@ size = Vector2(405, 20)
 script = ExtResource("1_0e48y")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(161, 0)
 texture = ExtResource("2_epypp")
+
+[node name="Label" type="Label" parent="CharacterBody2D/Sprite2D"]
+anchors_preset = -1
+anchor_right = 0.328
+anchor_bottom = 0.38300002
+offset_left = 127.0
+offset_top = 44.0
+offset_right = 125.016
+offset_bottom = 17.975998
+text = "12122"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(1, -12)
