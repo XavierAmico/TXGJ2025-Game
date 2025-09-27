@@ -30,6 +30,7 @@ var form = \"Spearman\"
 #func _ready():
 	
 var can_take_damage: bool = true
+var spear_instance : Node = null
 
 
 
@@ -59,6 +60,12 @@ func _process(delta):
 		if form == \"Spearman\" and not hasThrown:
 			hasThrown = true;
 			throw()
+	if Input.is_action_just_pressed(\"spearReturn\"):
+		if spear_instance and spear_instance.is_inside_tree():
+			spear_instance.queue_free()
+			spear_instance = null
+			hasThrown = false
+		
 	
 
 func attack():
@@ -68,17 +75,15 @@ func attack():
 	isAttacking = false; 
 	
 func throw():
-	var instance = spearProj.instantiate()
+	spear_instance = spearProj.instantiate()
 	if world:
-		
 		var dir_vec = ((get_global_mouse_position() - global_position).normalized())
 		
-		instance.dir = dir_vec
-		instance.spawnPos = position
-		instance.spawnRot = dir_vec.angle()
-		world.add_child(instance)
-		
-		
+		spear_instance.dir = dir_vec
+		spear_instance.spawnPos = position
+		spear_instance.spawnRot = dir_vec.angle()
+		world.add_child(spear_instance)
+	
 	
 func take_damage(amount: int):
 	if not can_take_damage:

@@ -19,3 +19,7 @@ offset_top = 264.0
 offset_right = 2578.0
 offset_bottom = 538.0
 script = ExtResource("1_r150o")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

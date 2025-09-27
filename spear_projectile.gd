@@ -12,10 +12,11 @@ var spawnRot : float
 var stuck := false
 var arc : float
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rotation = spawnRot
-	arc = 0.25
+	arc = 0.4
 	global_position = spawnPos
 	velocity = dir * SPEED
 	
@@ -40,7 +41,6 @@ func _physics_process(delta):
 	#move_and_slide()
 func _on_hit(collision: KinematicCollision2D):
 	var collider = collision.get_collider() # this checks if the collision was an enemy or if it was terrain
-	
 	if collider.is_in_group("Terrain"):
 		stuck = true
 		airHitbox.disabled = true
@@ -53,6 +53,4 @@ func _on_hit(collision: KinematicCollision2D):
 		if collider.has_method("take_damage"):
 			collider.take_damage(25)
 		queue_free()
-	
-	
 	
