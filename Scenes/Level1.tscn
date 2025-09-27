@@ -1,22 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyu7dp8xlwfi1"]
+[gd_scene load_steps=4 format=3 uid="uid://b22mqxm52s4kn"]
 
 [ext_resource type="PackedScene" uid="uid://durf4fw0iv0bu" path="res://Scenes/Player.tscn" id="1_2llne"]
-[ext_resource type="Texture2D" uid="uid://2xvya1rqvtxa" path="res://Assets/image.png" id="1_q12u6"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q12u6"]
-size = Vector2(1741, 20)
+[ext_resource type="Script" uid="uid://1hcl7tauw2gu" path="res://Scripts/01LevelInitialization.gd" id="1_joc8x"]
+[ext_resource type="PackedScene" uid="uid://dd33tpy3wmgsh" path="res://Scenes/tile_map.tscn" id="2_q12u6"]
 
 [node name="Level One" type="Node2D"]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(294.5, 125)
-shape = SubResource("RectangleShape2D_q12u6")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(292, 144.99997)
-scale = Vector2(9.543956, 0.22925764)
-texture = ExtResource("1_q12u6")
+script = ExtResource("1_joc8x")
 
 [node name="Player" parent="." instance=ExtResource("1_2llne")]
+position = Vector2(112, 1)
+scale = Vector2(0.3, 0.3)
+maxHealth = null
+
+[node name="TileMap" parent="." instance=ExtResource("2_q12u6")]
+position = Vector2(-10, 6)
+layer_0/tile_data = PackedInt32Array(524274, 0, 0, 524275, 0, 0, 524276, 0, 0, 524277, 0, 0, 589814, 0, 0, 589815, 0, 0, 589816, 0, 0, 589817, 0, 0, 589818, 0, 0, 589819, 0, 0, 655356, 0, 0, 655357, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 458769, 0, 0, 458770, 0, 0, 393234, 0, 0, 393235, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 262168, 0, 0, 262169, 0, 0, 262170, 0, 0, 262171, 0, 0, 262172, 0, 0, 262173, 0, 0)

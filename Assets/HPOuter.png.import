@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hygwck50fklx"
-path="res://.godot/imported/Messenger_creation_268A03FA-53D6-47CB-A69B-0E0A6EBC971F.jpg-ca8a9472ab06f33e6c968977d244213b.ctex"
+uid="uid://b7uhea6752h8k"
+path="res://.godot/imported/HPOuter.png-421d161970ff1c1e23ad0ddb6ddf858e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Messenger_creation_268A03FA-53D6-47CB-A69B-0E0A6EBC971F.jpg"
-dest_files=["res://.godot/imported/Messenger_creation_268A03FA-53D6-47CB-A69B-0E0A6EBC971F.jpg-ca8a9472ab06f33e6c968977d244213b.ctex"]
+source_file="res://Assets/HPOuter.png"
+dest_files=["res://.godot/imported/HPOuter.png-421d161970ff1c1e23ad0ddb6ddf858e.ctex"]
 
 [params]
 

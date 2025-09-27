@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://2vitadwoh342"
-path="res://.godot/imported/hurt.wav-ea2da61b1840c0aeb63fbdfecd78d156.sample"
+path="res://.godot/imported/hurt.wav-41392e18da3d5cd7cf115ac7691e92a4.sample"
 
 [deps]
 
-source_file="res://assets/brackeys_platformer_assets/sounds/hurt.wav"
-dest_files=["res://.godot/imported/hurt.wav-ea2da61b1840c0aeb63fbdfecd78d156.sample"]
+source_file="res://Assets/brackeys_platformer_assets/sounds/hurt.wav"
+dest_files=["res://.godot/imported/hurt.wav-41392e18da3d5cd7cf115ac7691e92a4.sample"]
 
 [params]
 

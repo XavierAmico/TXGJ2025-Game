@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hygwck50fklx"
-path="res://.godot/imported/Messenger_creation_268A03FA-53D6-47CB-A69B-0E0A6EBC971F.jpg-ca8a9472ab06f33e6c968977d244213b.ctex"
+uid="uid://dcp6gm36hngay"
+path="res://.godot/imported/HealthBars.png-9c21b913eed17c80bfdbace83f2f3aeb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Messenger_creation_268A03FA-53D6-47CB-A69B-0E0A6EBC971F.jpg"
-dest_files=["res://.godot/imported/Messenger_creation_268A03FA-53D6-47CB-A69B-0E0A6EBC971F.jpg-ca8a9472ab06f33e6c968977d244213b.ctex"]
+source_file="res://Assets/HealthBars.png"
+dest_files=["res://.godot/imported/HealthBars.png-9c21b913eed17c80bfdbace83f2f3aeb.ctex"]
 
 [params]
 
