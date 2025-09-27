@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://durf4fw0iv0bu"]
+[gd_scene load_steps=11 format=3 uid="uid://durf4fw0iv0bu"]
 
-[ext_resource type="Texture2D" uid="uid://bksc56puj3rjm" path="res://Assets/image2.png" id="1_rpqav"]
+[ext_resource type="Texture2D" uid="uid://r4xsw1gbcaka" path="res://Assets/catwalknb_sheet.png" id="1_rpqav"]
 
 [sub_resource type="GDScript" id="GDScript_kyqiw"]
 resource_name = "Player "
@@ -84,14 +84,57 @@ func _on_damage_cooldown_finished():
 		can_take_damage = true
 "
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kyqiw"]
-radius = 64.0
-height = 168.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyqiw"]
+atlas = ExtResource("1_rpqav")
+region = Rect2(223, 0, 208, 291)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
+atlas = ExtResource("1_rpqav")
+region = Rect2(436, 0, 208, 291)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dewec"]
+atlas = ExtResource("1_rpqav")
+region = Rect2(223, 291, 208, 291)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ixxa"]
+atlas = ExtResource("1_rpqav")
+region = Rect2(436, 291, 208, 291)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn08x"]
+atlas = ExtResource("1_rpqav")
+region = Rect2(649, 0, 208, 291)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_52ee3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyqiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gntrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dewec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ixxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nn08x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bhhdu"]
+radius = 28.0
+height = 154.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqav"]
 size = Vector2(107, 141)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Cat" type="CharacterBody2D"]
 script = SubResource("GDScript_kyqiw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -99,13 +142,16 @@ position = Vector2(-1, -2)
 scale = Vector2(0.3, 0.3)
 zoom = Vector2(2, 2)
 
-[node name="HitBox" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_kyqiw")
+[node name="CatWalk" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.0000153, 3)
+scale = Vector2(0.49534884, 0.59621996)
+sprite_frames = SubResource("SpriteFrames_52ee3")
+autoplay = "default"
+frame_progress = 0.2078868
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.13750374, -0.26250434)
-scale = Vector2(0.45839226, 0.42880833)
-texture = ExtResource("1_rpqav")
+[node name="HitBox" type="CollisionShape2D" parent="."]
+position = Vector2(22, 5)
+shape = SubResource("CapsuleShape2D_bhhdu")
 
 [node name="AttackArea01" type="Area2D" parent="."]
 position = Vector2(3, 3)

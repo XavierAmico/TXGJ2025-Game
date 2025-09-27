@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bvn1lnfrxhl1w"]
+
+[ext_resource type="Texture2D" uid="uid://bwbtqkpgb1yej" path="res://Assets/oogawalkNB.png" id="1_bskkn"]
+
+[resource]
+atlas = ExtResource("1_bskkn")
+region = Rect2(223, 299, 214, 287)
+margin = Rect2(250, 146, 286, 213)

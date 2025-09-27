@@ -1,0 +1,16 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+uid="uid://c8fuyrq717my6"
+path="res://.godot/imported/catwalknb_sheet.tpsheet-6712cc7e8856bbc0de7a4a2a59fe0a65.res"
+
+[deps]
+
+files=["res://Assets/catwalknb_sheet.sprites/catwalknb_sheet.tres", "res://Assets/catwalknb_sheet.sprites/catwalk2-removebg-preview.tres", "res://Assets/catwalknb_sheet.sprites/catwalk1-removebg-preview.tres", "res://Assets/catwalknb_sheet.sprites/catwalk5-removebg-preview.tres", "res://Assets/catwalknb_sheet.sprites/catwalk6-removebg-preview.tres", "res://Assets/catwalknb_sheet.sprites/catwalk3-removebg-preview.tres", "res://Assets/catwalknb_sheet.sprites/catwalk4-removebg-preview.tres"]
+
+source_file="res://Assets/catwalknb_sheet.tpsheet"
+dest_files=["res://.godot/imported/catwalknb_sheet.tpsheet-6712cc7e8856bbc0de7a4a2a59fe0a65.res", "res://Assets/catwalknb_sheet.sprites/catwalknb_sheet.tres", "res://Assets/catwalknb_sheet.sprites/catwalk2-removebg-preview.tres", "res://Assets/catwalknb_sheet.sprites/catwalk1-removebg-preview.tres", "res://Assets/catwalknb_sheet.sprites/catwalk5-removebg-preview.tres", "res://Assets/catwalknb_sheet.sprites/catwalk6-removebg-preview.tres", "res://Assets/catwalknb_sheet.sprites/catwalk3-removebg-preview.tres", "res://Assets/catwalknb_sheet.sprites/catwalk4-removebg-preview.tres"]
+
+[params]
+

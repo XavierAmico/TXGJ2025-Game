@@ -1,0 +1,123 @@
+{
+	"textures": [
+		{
+			"image": "catwalknb_sheet.png",
+			"size": {
+				"w": 860,
+				"h": 874
+			},
+			"sprites": [
+				{
+					"filename": "catwalknb_sheet.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 428,
+						"h": 872
+					},
+					"margin": {
+						"x": 1,
+						"y": 1,
+						"w": 2,
+						"h": 2
+					}
+				},
+				{
+					"filename": "catwalk2-removebg-preview.png",
+					"region": {
+						"x": 431,
+						"y": 1,
+						"w": 220,
+						"h": 290
+					},
+					"margin": {
+						"x": 243,
+						"y": 144,
+						"w": 280,
+						"h": 210
+					}
+				},
+				{
+					"filename": "catwalk1-removebg-preview.png",
+					"region": {
+						"x": 653,
+						"y": 1,
+						"w": 206,
+						"h": 291
+					},
+					"margin": {
+						"x": 254,
+						"y": 145,
+						"w": 294,
+						"h": 209
+					}
+				},
+				{
+					"filename": "catwalk5-removebg-preview.png",
+					"region": {
+						"x": 431,
+						"y": 293,
+						"w": 214,
+						"h": 287
+					},
+					"margin": {
+						"x": 250,
+						"y": 146,
+						"w": 286,
+						"h": 213
+					}
+				},
+				{
+					"filename": "catwalk6-removebg-preview.png",
+					"region": {
+						"x": 431,
+						"y": 582,
+						"w": 206,
+						"h": 291
+					},
+					"margin": {
+						"x": 254,
+						"y": 145,
+						"w": 294,
+						"h": 209
+					}
+				},
+				{
+					"filename": "catwalk3-removebg-preview.png",
+					"region": {
+						"x": 647,
+						"y": 294,
+						"w": 208,
+						"h": 288
+					},
+					"margin": {
+						"x": 255,
+						"y": 145,
+						"w": 292,
+						"h": 212
+					}
+				},
+				{
+					"filename": "catwalk4-removebg-preview.png",
+					"region": {
+						"x": 639,
+						"y": 584,
+						"w": 208,
+						"h": 288
+					},
+					"margin": {
+						"x": 255,
+						"y": 145,
+						"w": 292,
+						"h": 212
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:fdf029e9e1f8b3312706c6e93eff1c26:bc3abf5fb3e7f87e8f58b3845b618faa:a7a9c86708fdef72bf9290106d6dec1c$"
+	}
+}

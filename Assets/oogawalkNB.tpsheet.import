@@ -1,0 +1,16 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+uid="uid://bxmfj5a2gu5sh"
+path="res://.godot/imported/oogawalkNB.tpsheet-e71b15c780c51ee051a806cf14e2ab91.res"
+
+[deps]
+
+files=["res://Assets/oogawalkNB.sprites/ooga3-removebg-preview.tres", "res://Assets/oogawalkNB.sprites/ooga1-removebg-preview.tres", "res://Assets/oogawalkNB.sprites/ooga2-removebg-preview.tres", "res://Assets/oogawalkNB.sprites/ooga4-removebg-preview.tres"]
+
+source_file="res://Assets/oogawalkNB.tpsheet"
+dest_files=["res://.godot/imported/oogawalkNB.tpsheet-e71b15c780c51ee051a806cf14e2ab91.res", "res://Assets/oogawalkNB.sprites/ooga3-removebg-preview.tres", "res://Assets/oogawalkNB.sprites/ooga1-removebg-preview.tres", "res://Assets/oogawalkNB.sprites/ooga2-removebg-preview.tres", "res://Assets/oogawalkNB.sprites/ooga4-removebg-preview.tres"]
+
+[params]
+

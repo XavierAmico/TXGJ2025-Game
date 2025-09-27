@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://dk5idm2aqsucd"]
+
+[ext_resource type="Texture2D" uid="uid://bwbtqkpgb1yej" path="res://Assets/oogawalkNB.png" id="1_a7un6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52ee3"]
+atlas = ExtResource("1_a7un6")
+region = Rect2(0, 0, 221, 294)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhhdu"]
+atlas = ExtResource("1_a7un6")
+region = Rect2(221, 0, 221, 294)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_megsn"]
+atlas = ExtResource("1_a7un6")
+region = Rect2(0, 302, 221, 294)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoq75"]
+atlas = ExtResource("1_a7un6")
+region = Rect2(221, 302, 221, 294)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b1jej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52ee3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhhdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_megsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoq75")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g67id"]
+radius = 56.705597
+height = 274.78162
+
+[node name="OogaCat" type="CharacterBody2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="OogaWalk" type="AnimatedSprite2D" parent="."]
+position = Vector2(-103.99999, 4)
+scale = Vector2(0.4937783, 0.6113946)
+sprite_frames = SubResource("SpriteFrames_b1jej")
+autoplay = "default"
+frame_progress = 0.6104934
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-85.99999, 4)
+scale = Vector2(0.4937783, 0.6113946)
+shape = SubResource("CapsuleShape2D_g67id")

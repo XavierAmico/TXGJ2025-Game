@@ -1,0 +1,108 @@
+{
+	"textures": [
+		{
+			"image": "catwalk_nb.png",
+			"size": {
+				"w": 1000,
+				"h": 1500
+			},
+			"sprites": [
+				{
+					"filename": "catwalk1-removebg-preview.png",
+					"region": {
+						"x": 0,
+						"y": 0,
+						"w": 500,
+						"h": 500
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "catwalk2-removebg-preview.png",
+					"region": {
+						"x": 500,
+						"y": 0,
+						"w": 500,
+						"h": 500
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "catwalk3-removebg-preview.png",
+					"region": {
+						"x": 0,
+						"y": 500,
+						"w": 500,
+						"h": 500
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "catwalk4-removebg-preview.png",
+					"region": {
+						"x": 500,
+						"y": 500,
+						"w": 500,
+						"h": 500
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "catwalk5-removebg-preview.png",
+					"region": {
+						"x": 0,
+						"y": 1000,
+						"w": 500,
+						"h": 500
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "catwalk6-removebg-preview.png",
+					"region": {
+						"x": 500,
+						"y": 1000,
+						"w": 500,
+						"h": 500
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:9a9bdd1f03e9f7c447de41aa0f7618ca:24f8f15676e38a43331c2bf9777cc1b4:fc196449d7b936642966df439bcf73ed$"
+	}
+}

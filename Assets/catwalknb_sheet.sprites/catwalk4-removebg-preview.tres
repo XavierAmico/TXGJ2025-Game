@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://byjmglc7rd5bc"]
+
+[ext_resource type="Texture2D" uid="uid://r4xsw1gbcaka" path="res://Assets/catwalknb_sheet.png" id="1_oo55y"]
+
+[resource]
+atlas = ExtResource("1_oo55y")
+region = Rect2(639, 584, 208, 288)
+margin = Rect2(255, 145, 292, 212)
