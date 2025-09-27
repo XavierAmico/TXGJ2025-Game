@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://durf4fw0iv0bu"]
+[gd_scene load_steps=5 format=3 uid="uid://durf4fw0iv0bu"]
 
 [ext_resource type="Texture2D" uid="uid://bksc56puj3rjm" path="res://Assets/image2.png" id="1_rpqav"]
 
@@ -13,9 +13,15 @@ signal health_change # Will need to be emitted when player takes damage  or heal
 @export var maxHealth = 100
 @onready var current_health: int = 100
 
+@onready var attackHitBox = $AttackArea01/AttackHitBox
+@onready var playerHitBox = $HitBox
+
+
 const SPEED = 250.0
 const JUMP_VELOCITY = -250.0
+
 var jumped = 0
+var isAttacking = false
 
 #func _ready():
 	
@@ -29,7 +35,7 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed(\"ui_accept\") and (jumped < 2):
+	if Input.is_action_just_pressed(\"jump\") and (jumped < 2):
 		velocity.y = JUMP_VELOCITY
 		jumped += 1
 	if is_on_floor():
@@ -43,13 +49,25 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+func _process(delta):
+	if Input.is_action_just_pressed(\"attack\") and not isAttacking:
+		isAttacking = true; 
+		attack()
 
+func attack():
+	
+	attackHitBox.disabled = false; # Attack hit box activated
+	await get_tree().create_timer(0.5).timeout  # wait half a second
+	attackHitBox.disabled = true;
+	isAttacking = false; 
+	
+	
 func take_damage(amount: int):
 	if not can_take_damage:
 		return  # ignore if still in cooldown
 
 	current_health -= amount
-	health_change.emit(current_health)
+	health_change.emit(current_health) # signals to the hud to update the health bar
 
 	can_take_damage = false
 	# start cooldown
@@ -70,8 +88,16 @@ func _on_damage_cooldown_finished():
 radius = 64.0
 height = 168.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqav"]
+size = Vector2(107, 141)
+
 [node name="Player" type="CharacterBody2D"]
 script = SubResource("GDScript_kyqiw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, -2)
+scale = Vector2(0.3, 0.3)
+zoom = Vector2(2, 2)
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_kyqiw")
@@ -81,7 +107,14 @@ position = Vector2(0.13750374, -0.26250434)
 scale = Vector2(0.45839226, 0.42880833)
 texture = ExtResource("1_rpqav")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-1, -2)
-scale = Vector2(0.3, 0.3)
-zoom = Vector2(2, 2)
+[node name="AttackArea01" type="Area2D" parent="."]
+position = Vector2(3, 3)
+collision_layer = 2
+collision_mask = 4
+
+[node name="AttackHitBox" type="CollisionShape2D" parent="AttackArea01"]
+top_level = true
+position = Vector2(106, 0)
+shape = SubResource("RectangleShape2D_rpqav")
+disabled = true
+debug_color = Color(0.32317686, 0.5522869, 0.7861259, 0.41960785)
