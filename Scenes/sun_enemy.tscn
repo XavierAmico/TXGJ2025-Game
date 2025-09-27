@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcsyh025dxk54"]
+
+[ext_resource type="Texture2D" uid="uid://uxxpugdodjvf" path="res://Enemies/vecteezy_cartoon-sun-icon-with-facial-expression_22095757.png" id="1_bv6sf"]
+[ext_resource type="Script" uid="uid://dktpvbjvk2afu" path="res://Scenes/sun_enemy.gd" id="1_yr1f2"]
+[ext_resource type="PackedScene" uid="uid://bgnr6hrvcdm2x" path="res://Scenes/deathzone.tscn" id="2_yr1f2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw7qk"]
+atlas = ExtResource("1_bv6sf")
+region = Rect2(0, 0, 4225, 4225)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q5qex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw7qk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qyi8p"]
+radius = 322.09937
+
+[node name="SunEnemy" type="Node2D"]
+script = ExtResource("1_yr1f2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.999878, -29.999878)
+scale = Vector2(0.22378698, 0.2027219)
+sprite_frames = SubResource("SpriteFrames_q5qex")
+
+[node name="deatharea" parent="." instance=ExtResource("2_yr1f2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deatharea"]
+position = Vector2(-6, -30)
+shape = SubResource("CircleShape2D_qyi8p")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(2, 6)
+target_position = Vector2(487, -9)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(1, 0)
+target_position = Vector2(-550, -2)
