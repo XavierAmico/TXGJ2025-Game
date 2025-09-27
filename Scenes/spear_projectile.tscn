@@ -1,34 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://bc031ixpxhswq"]
+[gd_scene load_steps=5 format=3 uid="uid://ct21kycxy348d"]
 
 [ext_resource type="Script" uid="uid://cjh5d56bbk2o2" path="res://spear_projectile.gd" id="1_4pggk"]
 [ext_resource type="Texture2D" uid="uid://fabrogflcrpy" path="res://Assets/spear.png" id="2_wci7m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4pggk"]
-radius = 2.107212
-height = 4.214424
+radius = 1.8424356
+height = 3.6848712
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pggk"]
-size = Vector2(54.97235, 5.725156)
+size = Vector2(91.65922, 5.725156)
 
 [node name="SpearProjectile" type="CharacterBody2D"]
 rotation = 0.059065137
+collision_layer = 2
+collision_mask = 15
 script = ExtResource("1_4pggk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(49.29225, -4.7418747)
 rotation = 2.364921
-scale = Vector2(0.09673572, 0.08659456)
+scale = Vector2(0.1735843, 0.15203553)
 texture = ExtResource("2_wci7m")
 
 [node name="AirHitbox" type="CollisionShape2D" parent="."]
-position = Vector2(60.764065, -5.720852)
+position = Vector2(69.75986, -6.128668)
 rotation = 1.5383365
-scale = Vector2(0.9228106, 4.7436666)
+scale = Vector2(-1.0851352, 12.322706)
 shape = SubResource("CapsuleShape2D_4pggk")
 
 [node name="StuckHitBox" type="CollisionShape2D" parent="."]
-position = Vector2(49.815125, -4.8354993)
-rotation = -0.042757243
+position = Vector2(47.798233, -4.8299904)
+rotation = -0.042757247
 scale = Vector2(0.9815901, 1.0140562)
 shape = SubResource("RectangleShape2D_4pggk")
 disabled = true

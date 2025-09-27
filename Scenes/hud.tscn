@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bknp4jgchvidj"]
+[gd_scene load_steps=7 format=3 uid="uid://dk36sjly6c5pp"]
 
 [ext_resource type="Script" uid="uid://d2ggvosac33tn" path="res://Scripts/hud.gd" id="1_bjfho"]
 [ext_resource type="Texture2D" uid="uid://dcp6gm36hngay" path="res://Assets/HealthBars.png" id="1_fccik"]
 [ext_resource type="Texture2D" uid="uid://b7uhea6752h8k" path="res://Assets/HPOuter.png" id="2_bjfho"]
+[ext_resource type="Texture2D" uid="uid://c5etyhq545xn4" path="res://Assets/dashCooldown.png" id="4_6fbih"]
+[ext_resource type="Texture2D" uid="uid://daqmkdyao2m5s" path="res://Assets/spearIcon.png" id="5_t1xeu"]
+[ext_resource type="Texture2D" uid="uid://dcimyqrxj52ro" path="res://Assets/spearIconEmpty.png" id="6_36asn"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_bjfho")
@@ -16,3 +19,19 @@ scale = Vector2(5, 5)
 value = 40.0
 texture_over = ExtResource("2_bjfho")
 texture_progress = ExtResource("1_fccik")
+
+[node name="Dash Icon" type="Sprite2D" parent="."]
+position = Vector2(46.000004, 604)
+scale = Vector2(0.0738043, 0.070514515)
+texture = ExtResource("4_6fbih")
+
+[node name="SpearIcon" type="Sprite2D" parent="."]
+position = Vector2(1080, 580)
+scale = Vector2(0.2, 0.199)
+texture = ExtResource("5_t1xeu")
+
+[node name="EmptySpear" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1080, 580)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_36asn")

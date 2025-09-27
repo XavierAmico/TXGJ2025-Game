@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://64fiwt2qilcq"]
+[gd_scene load_steps=7 format=3 uid="uid://hrohhh27gv2c"]
 
+[ext_resource type="Script" uid="uid://c3a07xu47iuej" path="res://Scenes/game.gd" id="1_3dryh"]
 [ext_resource type="Texture2D" uid="uid://dm33ws8rmy8it" path="res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_qxrlw"]
 [ext_resource type="Texture2D" uid="uid://b1lmswgj186n6" path="res://Assets/Seasonal Tilesets/3 - Tropics/Background parts/5 - Sky_color.png" id="2_wrm1d"]
-[ext_resource type="PackedScene" uid="uid://durf4fw0iv0bu" path="res://Scenes/Player.tscn" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://durf4fw0iv0bu" path="res://Entities/Player.tscn" id="3_wrm1d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ryrav"]
 texture = ExtResource("1_qxrlw")
@@ -86,8 +87,9 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_ryrav")
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_3dryh")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["Terrain"]]
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_eow3j")
 format = 2
@@ -104,4 +106,4 @@ scale = Vector2(86.247, 16)
 texture = ExtResource("2_wrm1d")
 
 [node name="Player" parent="." instance=ExtResource("3_wrm1d")]
-position = Vector2(-776, -152)
+position = Vector2(-697, -102)
