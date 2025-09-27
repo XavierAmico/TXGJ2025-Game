@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="Game Jam 2025 Project"
-run/main_scene="uid://du8oo0hftrvii"
+
+run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
-<<<<<<<HEADconfig/features=PackedStringArray("4.5", "Mobile")
 
 [editor]
 
