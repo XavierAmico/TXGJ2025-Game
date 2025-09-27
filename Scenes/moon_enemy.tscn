@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddng6iig5bphq"]
+
+[ext_resource type="Texture2D" uid="uid://ijk1j74udjqh" path="res://Enemies/Screenshot_2025-09-27_155919-removebg-preview.png" id="1_5nfye"]
+[ext_resource type="PackedScene" uid="uid://bgnr6hrvcdm2x" path="res://Scenes/deathzone.tscn" id="2_8alyl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8alyl"]
+atlas = ExtResource("1_5nfye")
+region = Rect2(321, 0, 107, 331)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8w4c"]
+atlas = ExtResource("1_5nfye")
+region = Rect2(214, 0, 107, 331)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho0i0"]
+atlas = ExtResource("1_5nfye")
+region = Rect2(107, 0, 107, 331)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ho0i0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8alyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8w4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho0i0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5200q"]
+radius = 200.0
+
+[node name="MoonEnemy" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.047103982, 0.038519636)
+sprite_frames = SubResource("SpriteFrames_ho0i0")
+frame = 2
+frame_progress = 0.53205025
+
+[node name="deatharea" parent="." instance=ExtResource("2_8alyl")]
+scale = Vector2(0.01, 0.01)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deatharea"]
+position = Vector2(0, 100)
+shape = SubResource("CircleShape2D_5200q")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.01, 0.01)
+target_position = Vector2(700, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.01, 0.01)
+target_position = Vector2(-700, 0)
