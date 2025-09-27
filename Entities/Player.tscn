@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://durf4fw0iv0bu"]
+[gd_scene load_steps=10 format=3 uid="uid://durf4fw0iv0bu"]
 
 [ext_resource type="Texture2D" uid="uid://bksc56puj3rjm" path="res://Assets/image2.png" id="1_rpqav"]
+[ext_resource type="Texture2D" uid="uid://2xvya1rqvtxa" path="res://Assets/image.png" id="2_1iada"]
+[ext_resource type="Script" uid="uid://db54fxh7kkgy3" path="res://Entities/color_rect.gd" id="3_0gd87"]
 
 [sub_resource type="GDScript" id="GDScript_kyqiw"]
 resource_name = "Player "
@@ -13,19 +15,26 @@ signal health_change # Will need to be emitted when player takes damage  or heal
 @export var maxHealth = 100
 @onready var current_health: int = 100
 
+@onready var cavemanSprite = $caveSprite
+@onready var spearmanSprite = $spearSprite
 @onready var attackHitBox = $AttackArea01/AttackHitBox
 @onready var playerHitBox = $HitBox
 @onready var spearProj = load(\"res://Scenes/spear_projectile.tscn\")
 
 @onready var world = get_parent()
 
+
+
 const SPEED = 250.0
 const JUMP_VELOCITY = -250.0
 
 var jumped = 0
+var jumps = 2
 var isAttacking = false
 var hasThrown = false
-var form = \"Spearman\"
+var dashReady = true
+var dashSpeed := 1
+var form := \"Spearman\"
 
 #func _ready():
 	
@@ -40,33 +49,24 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed(\"jump\") and (jumped < 2):
+	if Input.is_action_just_pressed(\"jump\") and (is_on_floor() or form == \"Caveman\") and (jumps > jumped):
 		velocity.y = JUMP_VELOCITY
 		jumped += 1
-	if is_on_floor():
+	elif is_on_floor():
 		jumped = 0
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis(\"ui_left\", \"ui_right\")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * SPEED * dashSpeed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED) * dashSpeed
 
 	move_and_slide()
 	
 func _process(delta):
-	if Input.is_action_just_pressed(\"attack\"):
-		if form == \"Spearman\" and not hasThrown:
-			hasThrown = true;
-			throw()
-	if Input.is_action_just_pressed(\"spearReturn\"):
-		if spear_instance and spear_instance.is_inside_tree():
-			spear_instance.queue_free()
-			spear_instance = null
-			hasThrown = false
-		
-	
+	handleInputs()
+	updateForm()
 
 func attack():
 	attackHitBox.disabled = false; # Attack hit box activated
@@ -84,7 +84,18 @@ func throw():
 		spear_instance.spawnRot = dir_vec.angle()
 		world.add_child(spear_instance)
 	
+func dash():
+	dashReady = false
+	dashSpeed = 4
+	var timer = get_tree().create_timer(0.1) # .1 second delay
+	await timer.timeout
 	
+	dashSpeed = 1
+	var cooldown = get_tree().create_timer(1.5) # 3 second delay
+	cooldown.timeout.connect(_dash_cooldown)
+	
+func _dash_cooldown():
+	dashReady = true; 
 func take_damage(amount: int):
 	if not can_take_damage:
 		return  # ignore if still in cooldown
@@ -101,6 +112,41 @@ func take_damage(amount: int):
 	
 func _on_damage_cooldown_finished():
 		can_take_damage = true
+	
+func handleInputs():
+	
+	if Input.is_action_just_pressed(\"formSwitch\"):
+		if form == \"Spearman\":
+			form = \"Caveman\"
+		elif form == \"Caveman\":
+			form = \"Spearman\"
+		print(\"Current Form: \" + form)
+	if Input.is_action_just_pressed(\"attack\"):
+		if form == \"Spearman\" and not hasThrown:
+			hasThrown = true;
+			throw()
+		if form == \"Caveman\" and not isAttacking:
+			isAttacking = true
+			attack()
+	if Input.is_action_just_pressed(\"ability\"):
+		if form == \"Spearman\" and dashReady:
+			dash()
+	
+	if Input.is_action_just_pressed(\"spearReturn\"):
+		if spear_instance and spear_instance.is_inside_tree():
+			spear_instance.queue_free()
+			spear_instance = null
+			hasThrown = false
+	
+func updateForm():
+	if form == \"Caveman\":
+		cavemanSprite.visible = true
+		spearmanSprite.visible = false
+		jumps = 2
+	if form == \"Spearman\":
+		cavemanSprite.visible = false
+		spearmanSprite.visible = true
+		jumps = 1
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kyqiw"]
@@ -109,6 +155,14 @@ height = 168.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqav"]
 size = Vector2(107, 141)
+
+[sub_resource type="Gradient" id="Gradient_c7jvw"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0gd87"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_drum4"]
+noise = SubResource("FastNoiseLite_0gd87")
+color_ramp = SubResource("Gradient_c7jvw")
 
 [node name="Player" type="CharacterBody2D"]
 script = SubResource("GDScript_kyqiw")
@@ -122,13 +176,19 @@ zoom = Vector2(2, 2)
 scale = Vector2(1, 1.0105337)
 shape = SubResource("CapsuleShape2D_kyqiw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="spearSprite" type="Sprite2D" parent="."]
 position = Vector2(0.13750374, -0.26250434)
 scale = Vector2(0.45839226, 0.42880833)
 texture = ExtResource("1_rpqav")
 
+[node name="caveSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.9999695, 5.000001)
+scale = Vector2(0.7156594, 0.794214)
+texture = ExtResource("2_1iada")
+
 [node name="AttackArea01" type="Area2D" parent="."]
-position = Vector2(3, 3)
+position = Vector2(14.999999, -27.999998)
 scale = Vector2(5.034491, 10.845761)
 collision_layer = 2
 collision_mask = 4
@@ -139,3 +199,21 @@ position = Vector2(106, 0)
 shape = SubResource("RectangleShape2D_rpqav")
 disabled = true
 debug_color = Color(0.32317686, 0.5522869, 0.7861259, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+light_mask = 0
+offset_left = -1739.0
+offset_top = -1198.0
+offset_right = 1716.0
+offset_bottom = 899.0
+color = Color(0.00894532, 0.0075303116, 0.09140644, 1)
+script = ExtResource("3_0gd87")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.7764706, 1, 0.101960786, 1)
+self_modulate = Color(0.16078432, 0.11372549, 0.27058825, 1)
+show_behind_parent = true
+position = Vector2(-22, -152)
+scale = Vector2(6.8417974, 4.0703125)
+texture = SubResource("NoiseTexture2D_drum4")
