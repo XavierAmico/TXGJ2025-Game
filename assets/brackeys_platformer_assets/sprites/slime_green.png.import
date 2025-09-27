@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://h3qre2srcn1f"
-path="res://.godot/imported/slime_green.png-7537a22022111bb8764aa544858b4d35.ctex"
+path="res://.godot/imported/slime_green.png-8cc09d545b659d66e348bf8ad658d30b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/brackeys_platformer_assets/sprites/slime_green.png"
-dest_files=["res://.godot/imported/slime_green.png-7537a22022111bb8764aa544858b4d35.ctex"]
+source_file="res://Assets/brackeys_platformer_assets/sprites/slime_green.png"
+dest_files=["res://.godot/imported/slime_green.png-8cc09d545b659d66e348bf8ad658d30b.ctex"]
 
 [params]
 

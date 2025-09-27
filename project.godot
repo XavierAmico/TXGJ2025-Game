@@ -11,15 +11,19 @@ config_version=5
 [application]
 
 config/name="Game Jam 2025 Project"
-
 run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+<<<<<<<HEADconfig/features=PackedStringArray("4.5", "Mobile")
 
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[layer_names]
+
+2d_physics/layer_1="Player Collision"
 
 [rendering]
 
