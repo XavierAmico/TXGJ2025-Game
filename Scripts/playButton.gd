@@ -1,7 +1,7 @@
 extends Button
 
 @onready var button = $Button
-var firstScene = "Level1" # This is the Scene to be loaded on play 
+var firstScene = "test_level" # This is the Scene to be loaded on play 
 
 
 # Called when the node enters the scene tree for the first time.
