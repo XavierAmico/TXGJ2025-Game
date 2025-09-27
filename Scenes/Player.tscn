@@ -6,10 +6,21 @@
 resource_name = "Player "
 script/source = "extends CharacterBody2D
 
+class_name Player
+
+signal health_change # Will need to be emitted when player takes damage  or heals
+
+@export var maxHealth = 100
+@onready var current_health: int = 100
 
 const SPEED = 250.0
 const JUMP_VELOCITY = -250.0
 var jumped = 0
+
+#func _ready():
+	
+var can_take_damage: bool = true
+
 
 
 func _physics_process(delta):
@@ -32,13 +43,34 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func take_damage(amount: int):
+	if not can_take_damage:
+		return  # ignore if still in cooldown
+
+	current_health -= amount
+	health_change.emit(current_health)
+
+	can_take_damage = false
+	# start cooldown
+	var timer = get_tree().create_timer(1.0) # 1 second delay
+	timer.timeout.connect(_on_damage_cooldown_finished)
+
+	
+	current_health -= amount
+	
+	health_change.emit()
+	pass
+	
+func _on_damage_cooldown_finished():
+		can_take_damage = true
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kyqiw"]
 radius = 64.0
 height = 168.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 script = SubResource("GDScript_kyqiw")
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
