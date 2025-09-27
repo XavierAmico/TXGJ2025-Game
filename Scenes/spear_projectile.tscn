@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 [gd_scene load_steps=5 format=3 uid="uid://cpm8lkf6h6upa"]
 
 [ext_resource type="Script" path="res://spear_projectile.gd" id="1_4pggk"]
 [ext_resource type="Texture2D" path="res://Assets/spear.png" id="2_wci7m"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://bc031ixpxhswq"]
+
+[ext_resource type="Script" uid="uid://cjh5d56bbk2o2" path="res://spear_projectile.gd" id="1_4pggk"]
+[ext_resource type="Texture2D" uid="uid://fabrogflcrpy" path="res://Assets/spear.png" id="2_wci7m"]
+>>>>>>> 90340179918f9ddfcbf585ba9e486556791c4ecf
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4pggk"]
 radius = 2.107212
