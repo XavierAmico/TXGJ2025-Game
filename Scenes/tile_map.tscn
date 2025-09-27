@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dd33tpy3wmgsh"]
 
-[ext_resource type="Texture2D" uid="uid://c1p5hr8x7kcc7" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_yj5sm"]
+[ext_resource type="Texture2D" uid="uid://bsfd01h0ypvmo" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_yj5sm"]
 [ext_resource type="Texture2D" uid="uid://dcp6gm36hngay" path="res://Assets/HealthBars.png" id="2_1br53"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1br53"]
@@ -1418,6 +1418,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1br53")
 sources/1 = SubResource("TileSetAtlasSource_drmie")
 
-[node name="TileMap" type="TileMap"]
+[node name="TileMap" type="TileMap" groups=["Terrain"]]
 tile_set = SubResource("TileSet_drmie")
 format = 2
+layer_0/tile_data = PackedInt32Array(130933, 0, 0, 130934, 0, 0, -4456712, 0, 0, -4456711, 0, 0, -4456710, 0, 0, -4456709, 0, 0, -4456708, 0, 0, -4456707, 0, 0, -4522242, 0, 0, -4522241, 0, 0, -4522240, 0, 0, -4522239, 0, 0, -4522238, 0, 0, -4522237, 0, 0, -4522236, 0, 0, -4587772, 0, 0, -4587771, 0, 0)
