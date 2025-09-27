@@ -11,9 +11,7 @@ config_version=5
 [application]
 
 config/name="Game Jam 2025 Project"
-run/main_scene="uid://dr0xvdgtw07w4"
 config/features=PackedStringArray("4.5", "Mobile")
-config/icon="res://Assets/icon.svg"
 
 [editor]
 
