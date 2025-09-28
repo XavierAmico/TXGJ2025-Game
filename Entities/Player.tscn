@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://durf4fw0iv0bu"]
+[gd_scene load_steps=6 format=3 uid="uid://durf4fw0iv0bu"]
 
-[ext_resource type="Texture2D" uid="uid://bksc56puj3rjm" path="res://Assets/image2.png" id="1_rpqav"]
-[ext_resource type="Texture2D" uid="uid://2xvya1rqvtxa" path="res://Assets/image.png" id="2_1iada"]
-[ext_resource type="Script" uid="uid://db54fxh7kkgy3" path="res://Entities/color_rect.gd" id="3_0gd87"]
+[ext_resource type="Texture2D" uid="uid://dmmomt5caensf" path="res://Assets/image2.png" id="1_rpqav"]
+[ext_resource type="Texture2D" uid="uid://ddlohwg4r3uds" path="res://Assets/image.png" id="2_1iada"]
 
 [sub_resource type="GDScript" id="GDScript_kyqiw"]
 resource_name = "Player "
@@ -161,14 +160,6 @@ height = 168.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqav"]
 size = Vector2(107, 141)
 
-[sub_resource type="Gradient" id="Gradient_c7jvw"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_0gd87"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_drum4"]
-noise = SubResource("FastNoiseLite_0gd87")
-color_ramp = SubResource("Gradient_c7jvw")
-
 [node name="Player" type="CharacterBody2D"]
 script = SubResource("GDScript_kyqiw")
 
@@ -203,21 +194,3 @@ position = Vector2(106, 0)
 shape = SubResource("RectangleShape2D_rpqav")
 disabled = true
 debug_color = Color(0.32317686, 0.5522869, 0.7861259, 0.41960785)
-
-[node name="ColorRect" type="ColorRect" parent="."]
-show_behind_parent = true
-light_mask = 0
-offset_left = -1739.0
-offset_top = -1198.0
-offset_right = 1716.0
-offset_bottom = 899.0
-color = Color(0.00894532, 0.0075303116, 0.09140644, 1)
-script = ExtResource("3_0gd87")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.7764706, 1, 0.101960786, 1)
-self_modulate = Color(0.16078432, 0.11372549, 0.27058825, 1)
-show_behind_parent = true
-position = Vector2(-22, -152)
-scale = Vector2(6.8417974, 4.0703125)
-texture = SubResource("NoiseTexture2D_drum4")

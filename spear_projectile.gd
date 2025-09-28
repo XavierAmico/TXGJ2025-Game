@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var SPEED = 350 
+@export var SPEED = 500
 @onready var sprite = $Sprite2D
 @onready var airHitbox = $AirHitbox
 @onready var stuckHitbox = $StuckHitBox
@@ -45,6 +45,7 @@ func _on_hit(collision: KinematicCollision2D):
 		stuck = true
 		airHitbox.disabled = true
 		stuckHitbox.disabled = false
+		collision_layer = 1
 		
 		velocity = Vector2.ZERO
 		#global_position = collision.get_position()
