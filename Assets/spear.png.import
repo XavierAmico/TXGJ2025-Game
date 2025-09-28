@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0rtsfuwglqm5"
-path="res://.godot/imported/vecteezy_pixel-star-sparkle-twinkle-illustration_69515252.jpg-aa816c4d92dca05da10a8eaff5255a43.ctex"
+uid="uid://fabrogflcrpy"
+path="res://.godot/imported/spear.png-0eecfb880174044462b974dc14decea5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/vecteezy_pixel-star-sparkle-twinkle-illustration_69515252.jpg"
-dest_files=["res://.godot/imported/vecteezy_pixel-star-sparkle-twinkle-illustration_69515252.jpg-aa816c4d92dca05da10a8eaff5255a43.ctex"]
+source_file="res://Assets/spear.png"
+dest_files=["res://.godot/imported/spear.png-0eecfb880174044462b974dc14decea5.ctex"]
 
 [params]
 

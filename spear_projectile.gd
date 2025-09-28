@@ -6,7 +6,8 @@ extends CharacterBody2D
 @onready var stuckHitbox = $StuckHitBox
 
 var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity")
-var dir : Vector2var spawnPos : Vector2
+var dir : Vector2
+var spawnPos : Vector2
 var spawnRot : float
 var stuck := false
 var arc : float
