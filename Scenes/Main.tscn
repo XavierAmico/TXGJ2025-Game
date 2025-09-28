@@ -15,11 +15,7 @@ position = Vector2(2347, 402)
 
 [node name="Button" type="Button" parent="."]
 offset_left = 2128.0
-offset_top = 264.0
+offset_top = 259.0
 offset_right = 2578.0
-offset_bottom = 538.0
+offset_bottom = 533.0
 script = ExtResource("1_r150o")
-
-[node name="TextureButton" type="TextureButton" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
