@@ -166,7 +166,7 @@ script = SubResource("GDScript_kyqiw")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, -2)
 scale = Vector2(0.3, 0.3)
-zoom = Vector2(2, 2)
+zoom = Vector2(1.2, 1.2)
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 1.0105337)
