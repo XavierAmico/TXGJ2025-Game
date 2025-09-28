@@ -5,21 +5,17 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 1769.0
-offset_top = 66.0
-offset_right = 2941.0
-offset_bottom = 737.0
+offset_left = -23.0
+offset_top = 3.0
+offset_right = 1149.0
+offset_bottom = 674.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(2347, 402)
+position = Vector2(563, 318)
 
 [node name="Button" type="Button" parent="."]
-offset_left = 2128.0
-offset_top = 264.0
-offset_right = 2578.0
-offset_bottom = 538.0
+offset_left = 358.0
+offset_top = 177.0
+offset_right = 808.0
+offset_bottom = 451.0
 script = ExtResource("1_r150o")
-
-[node name="TextureButton" type="TextureButton" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
